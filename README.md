@@ -22,7 +22,6 @@ This repository has already prepared benefits for your development:
 
 ### Environment
  - Fill in the environment values as described with .env.example template inside the .env file (comand below)
- - echo PK="PRIVATE_KEY" > .env
 ---
 ## Usage
 ### Compile code
