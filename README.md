@@ -13,13 +13,16 @@ This repository has already prepared benefits for your development:
 - Solcover, solhint and prettier configurations.
 
 ## Setup
+
 ### Git config
 `$ git config url."https://".insteadOf git://`
+
 ### Dependencies
 `$ yarn`
-### Environment
- - Fill in the environment values as described with .env.example template inside the .env file
 
+### Environment
+ - Fill in the environment values as described with .env.example template inside the .env file (comand below)
+ - echo PK="PRIVATE_KEY" > .env
 ---
 ## Usage
 ### Compile code
