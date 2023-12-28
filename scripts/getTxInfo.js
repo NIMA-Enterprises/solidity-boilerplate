@@ -17,6 +17,7 @@ async function main() {
     // get network
     const network = await ethers.provider.getNetwork();
 
+    //TODO: Add event logs preview as well.
     // log majority of tx details
     console.log(`
         - network chain id: ${network.chainId}
