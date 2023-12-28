@@ -1,6 +1,16 @@
-# Nima Sei Starter Contracts Repository
+# Nima Sei Starter Contracts Repository ![CI](https://github.com/NIMA-Enterprises/solidity-boilerplate/actions/workflows/ci.yml/badge.svg)
+Start your Sei smart-contract project easily!
 
-![CI](https://github.com/NIMA-Enterprises/solidity-boilerplate/actions/workflows/ci.yml/badge.svg)
+This repository has already prepared benefits for your development:
+
+- Hardhat configuration adapted for Sei network testnet and mainnet deployment.
+- Full project structure with the Token sample contract.
+- Configuration directory with prepared structure made to save your abis, addresses and configurations.
+- Utils local module which enables easy management of your json files.
+- Testing helpers module.
+- CI performing lint, test and abi updating on each push on the main tree (develop, staging and master) and every PR.
+- Yarn scripts for quick fork of the Sei network and more.
+- Solcover, solhint and prettier configurations.
 
 ## Setup
 ### Git config
