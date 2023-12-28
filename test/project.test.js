@@ -9,6 +9,5 @@ describe('Project Tests', function () {
     [deployer, ...users] = await ethers.getSigners();
   });
 
-  it('Should', async function () {
-  });
+  it('Should', async function () {});
 });

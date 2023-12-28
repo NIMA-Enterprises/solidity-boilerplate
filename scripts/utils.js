@@ -3,7 +3,7 @@ const path = require('path');
 
 const relativePath = '../deployments/';
 
-const sleep = ms => new Promise(r => setTimeout(r, ms));
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const jsons = {
   addresses: 'addresses.json',
