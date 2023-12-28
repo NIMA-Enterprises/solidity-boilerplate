@@ -15,12 +15,17 @@ async function main() {
   // get network
   const network = await ethers.provider.getNetwork();
 
-  // log majority of tx details
+  // log relevant transaction data
+  // transaction data/input is logged in cases other than contract deployment
   console.log(`
         - network chain id: ${network.chainId}
-        - txHash: ${txHash} 
+        - txHash: ${txHash}
+        - nonce: ${tx.nonce}
+        - data: ${txReceipt.contractAddress ? 'contract deployment' : tx.data}
+        - type: ${tx.type}
         - status: ${txReceipt.status === 1 ? 'success' : 'reverted'}
         - block: ${txReceipt.blockNumber}
+        - transactionIndex: ${txReceipt.transactionIndex}
         - timestamp: ${blockInfo.timestamp} - ${new Date(blockInfo.timestamp * 1000)}
         - deployedContractAddress: ${txReceipt.contractAddress || 'none'}
         - from: ${txReceipt.from}
@@ -29,6 +34,10 @@ async function main() {
         - gasLimit: ${tx.gasLimit}
         - gasPrice: ${tx.gasPrice}
         - gasUsed : ${txReceipt.gasUsed}
+        - signature: 
+            - r: ${tx.r}
+            - s: ${tx.s}
+            - v: ${tx.v}
     `);
 
   console.log('Events Log:');
