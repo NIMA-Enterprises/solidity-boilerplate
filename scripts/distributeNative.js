@@ -1,5 +1,5 @@
 const hre = require("hardhat");
-const { ethers, web3 } = hre
+const { ethers } = hre
 
 
 
@@ -9,16 +9,15 @@ async function main() {
     ];
     const amountSEI = "1"; // Add amount of SEI you'd like to distribute
 
-    console.log('Number of wallets to receive SEI = ', wallets.length);
+    console.log('Number of wallets to receive SEI =', wallets.length);
 
-    for (let i=0; i < wallets.length; i++) {
+    for (let i = 0; i < wallets.length; i++) {
 
         const signer = await ethers.provider.getSigner();
-        const address = await signer.getAddress();
 
         const tx = await signer.sendTransaction({
             to: ethers.provider._getAddress(wallets[i]),
-            value: ethers.utils.parseEther(amountETH)
+            value: ethers.utils.parseEther(amountSEI)
         });
 
         console.log(`${i+1}. TxHash: ${tx.hash}`);
