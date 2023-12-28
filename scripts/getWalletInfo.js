@@ -15,8 +15,8 @@ async function main() {
     // Log results
     console.log(`
         - Wallet: ${wallet} 
-        - TransactionCount: ${transactionCount} 
-        - Balance: ${balance}    
+        - TransactionCount (nonce): ${transactionCount} 
+        - Balance: ${ethers.utils.formatEther(balance.toString())} SEI   
     `);
 }
 
