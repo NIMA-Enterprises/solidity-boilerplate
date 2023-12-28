@@ -7,10 +7,10 @@ async function main() {
   const tokenFactory = await hre.ethers.getContractFactory('Token');
   const token = await tokenFactory.deploy();
   await token.deployed();
+  console.log(`Deployment tx hash: ${token.deployTransaction.hash}`);
   console.log(`Token address: ${token.address}`);
 
-  saveJson(jsons.addresses, hre.network.name, 'Token', mockToken.address);
-
+  saveJson(jsons.addresses, hre.network.name, 'Token', token.address);
   console.log('Done!');
 }
 
