@@ -1,18 +1,23 @@
 const hre = require('hardhat');
+const { ethers } = hre;
 const { networks } = require('../hardhat.config');
-const rpc = networks[hre.network.name]['url'];
-const Web3 = require('web3');
-const web3 = new Web3(new Web3.providers.HttpProvider(rpc));
+
 
 async function main() {
-  const wallet = '';
+    // Wallet address to inspect
+    const wallet = '0xf3B39c28bF4c5c13346eEFa8F90e88B78A610381';
 
-  const transactionCount = await web3.eth.getTransactionCount(wallet);
-  const balance = await web3.eth.getBalance(wallet);
+    // Get nonce
+    const transactionCount = await ethers.provider.getTransactionCount(wallet);
+    // Get wallet balance
+    const balance = await ethers.provider.getBalance(wallet);
 
-  console.log(`
-    Wallet: ${wallet} - TransactionCount: ${transactionCount} - Balance: ${balance}
-  `);
+    // Log results
+    console.log(`
+        - Wallet: ${wallet} 
+        - TransactionCount: ${transactionCount} 
+        - Balance: ${balance}    
+    `);
 }
 
 main()
