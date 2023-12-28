@@ -23,7 +23,7 @@ async function main() {
         - txHash: ${txHash} 
         - status: ${txReceipt.status === 1 ? 'success' : 'reverted'}
         - block: ${txReceipt.blockNumber}
-        - timestamp: ${blockInfo.timestamp}
+        - timestamp: ${blockInfo.timestamp} - ${new Date(blockInfo.timestamp * 1000)}
         - deployedContractAddress: ${txReceipt.contractAddress || 'none'}
         - from: ${txReceipt.from}
         - interacted with (to): ${txReceipt.to}
