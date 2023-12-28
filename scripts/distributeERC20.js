@@ -1,5 +1,5 @@
 const hre = require("hardhat");
-const { ethers, web3 } = hre
+const { ethers } = hre
 
 async function main() {
 
