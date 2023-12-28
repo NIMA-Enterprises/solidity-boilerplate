@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [master, staging, develop]
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version:
+          - 16.x
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+      - name: 'Set up Node.js ${{ matrix.node-version }}'
+        uses: actions/setup-node@v1
+        with:
+          node-version: '${{ matrix.node-version }}'
+      - name: Setup git config
+        run: |
+          git config user.name "Github Bot 🤖"
+          git config user.email "<>"
+      - name: Use https:// instead of git://
+        run: git config --global url.https://github.com/.insteadOf git://github.com/
+      - name: Install dependencies
+        run: yarn install
+      - name: Lint
+        run: yarn lint
+      - name: Run tests
+        run: yarn test
+      - name: Update ABIs
+        run: |
+          node scripts/updateAbis.js
+          git add deployments/abis.json
+      - name: Commit changes
+        run: |
+          # commit and push
+          if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
+            git commit -m "🪄 ci"
+            git push
+          fi
