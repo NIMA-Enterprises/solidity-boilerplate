@@ -1,25 +1,22 @@
 const hre = require('hardhat');
 const { ethers } = hre;
-const { networks } = require('../hardhat.config');
-
 
 async function main() {
+  // Tx Hash to inspect
+  const txHash =
+    '0x751e5cedf91664afd4c4369a754bf303a39b27628c498e20d726ad085e7c62a0';
 
-    // Tx Hash to inspect
-    const txHash = '0x751e5cedf91664afd4c4369a754bf303a39b27628c498e20d726ad085e7c62a0';
+  // get transaction
+  const tx = await ethers.provider.getTransaction(txHash);
+  // get receipt
+  const txReceipt = await ethers.provider.getTransactionReceipt(txHash);
+  // get block info
+  const blockInfo = await ethers.provider.getBlock(txReceipt.blockNumber);
+  // get network
+  const network = await ethers.provider.getNetwork();
 
-    // get transaction
-    const tx = await ethers.provider.getTransaction(txHash);
-    // get receipt
-    const txReceipt = await ethers.provider.getTransactionReceipt(txHash);
-    // get block info
-    const blockInfo = await ethers.provider.getBlock(txReceipt.blockNumber)
-    // get network
-    const network = await ethers.provider.getNetwork();
-
-    //TODO: Add event logs preview as well.
-    // log majority of tx details
-    console.log(`
+  // log majority of tx details
+  console.log(`
         - network chain id: ${network.chainId}
         - txHash: ${txHash} 
         - status: ${txReceipt.status === 1 ? 'success' : 'reverted'}
@@ -32,7 +29,21 @@ async function main() {
         - gasLimit: ${tx.gasLimit}
         - gasPrice: ${tx.gasPrice}
         - gasUsed : ${txReceipt.gasUsed}
-    `)
+    `);
+
+  console.log('Events Log:');
+
+  for (let i = 0; i < txReceipt.logs.length; i++) {
+    const log = txReceipt.logs[i];
+    const eventSignature = log.topics[0];
+    log.topics.shift();
+    console.log(`
+       Log Index: ${log.logIndex}
+        - eventSignature: ${eventSignature}
+        - indexedEventValues: ${log.topics}
+        - data: ${log.data}
+    `);
+  }
 }
 
 main()

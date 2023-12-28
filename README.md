@@ -11,6 +11,8 @@ This repository has already prepared benefits for your development:
 - CI performing lint, test and abi updating on each push on the main tree (develop, staging and master) and every PR.
 - Yarn scripts for quick fork of the Sei network and more.
 - Solcover, solhint and prettier configurations.
+- Scripts for retrieval of transaction data and wallet information.
+- Scripts for easy token distribution.
 
 ## Setup
 
