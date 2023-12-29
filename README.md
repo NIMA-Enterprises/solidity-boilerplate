@@ -22,7 +22,8 @@ This repository has already prepared benefits for your development:
 `$ git config url."https://".insteadOf git://`
 
 ### Dependencies
-`$ yarn`
+- Make sure to use node version 16 or higher.
+- to install do `$ yarn`
 
 ### Environment
  - Fill in the environment values as described with .env.example template inside the .env file (comand below)
