@@ -1,4 +1,6 @@
-# Nima Sei Starter Contracts Repository ![CI](https://github.com/NIMA-Enterprises/solidity-boilerplate/actions/workflows/ci.yml/badge.svg)
+![Screenshot](cover.png)
+# Sei Solidity Boilerplate | by NIMA  ![CI](https://github.com/NIMA-Enterprises/solidity-boilerplate/actions/workflows/ci.yml/badge.svg)
+
 Start your Sei smart-contract project easily!
 
 This repository has already prepared benefits for your development:
