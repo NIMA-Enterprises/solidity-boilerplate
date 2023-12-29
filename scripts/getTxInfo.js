@@ -40,7 +40,6 @@ async function main() {
             - v: ${tx.v}
     `);
 
-  console.log('Events Log:');
 
   for (let i = 0; i < txReceipt.logs.length; i++) {
     const log = txReceipt.logs[i];
