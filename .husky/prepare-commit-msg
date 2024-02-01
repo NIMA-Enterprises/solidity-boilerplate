@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
+SHA1=$3
+
+yarn run hook:prepare-commit-msg $COMMIT_MSG_FILE $COMMIT_SOURCE $SHA1

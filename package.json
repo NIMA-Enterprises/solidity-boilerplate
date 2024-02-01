@@ -12,12 +12,20 @@
     "node": "npx hardhat node",
     "node-mainnet": "npx hardhat node --fork",
     "node-testnet": "npx hardhat node --fork https://evm-rpc.arctic-1.seinetwork.io",
-    "clean": "rimraf ./cache ./artifacts ./node_modules"
+    "clean": "rimraf ./cache ./artifacts ./node_modules",
+    "postinstall": "yarn husky install && cp ./gitmojis.json ./node_modules/commitlint-plugin-gitmoji/lib/gitmojis.json",
+    "hook:prepare-commit-msg": "node scripts/prepare-commit-msg.js"
   },
   "keywords": [],
   "author": "nima-enterprises",
   "license": "ISC",
   "dependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "commitlint-config-gitmoji": "^2.2.5",
+    "commitlint-plugin-gitmoji": "^2.2.0",
+    "husky": "^8.0.1",
+    "pre-commit": "^1.2.2",
     "dotenv": "16.0.3",
     "git-module": "0.0.8",
     "hardhat-contract-sizer": "2.10.0",

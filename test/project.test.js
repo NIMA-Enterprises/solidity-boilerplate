@@ -12,7 +12,6 @@ describe('Project Tests', function () {
     token = await tokenFactory.deploy();
 
     await token.deploymentTransaction().wait();
-
   });
 
   it('Should', async function () {

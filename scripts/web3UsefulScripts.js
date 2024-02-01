@@ -15,9 +15,8 @@ const getMethodId = (ethers, methodNameAndArgs) => {
  * @returns {*}
  */
 const getBlock = async (ethers, blockNumber) => {
-    return await ethers.provider.getBlock(blockNumber || 'latest');
-}
-
+  return await ethers.provider.getBlock(blockNumber || 'latest');
+};
 
 /**
  * Get transactions in block, by default will return from the last one.
@@ -26,15 +25,12 @@ const getBlock = async (ethers, blockNumber) => {
  * @returns {Promise<*>}
  */
 const getTransactionsInBlock = async (ethers, blockNumber) => {
-    const block = getBlock(ethers,blockNumber);
-    return block.transactions;
-}
-
-
-
+  const block = getBlock(ethers, blockNumber);
+  return block.transactions;
+};
 
 module.exports = {
-    getMethodId,
-    getBlock,
-    getTransactionsInBlock
+  getMethodId,
+  getBlock,
+  getTransactionsInBlock,
 };
