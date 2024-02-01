@@ -14,7 +14,7 @@
     "node-testnet": "npx hardhat node --fork https://evm-rpc.arctic-1.seinetwork.io",
     "clean": "rimraf ./cache ./artifacts ./node_modules",
     "postinstall": "yarn husky install && cp ./gitmojis.json ./node_modules/commitlint-plugin-gitmoji/lib/gitmojis.json",
-    "hook:prepare-commit-msg": "node scripts/prepare-commit-msg.js"
+    "hook:prepare-commit-msg": "node githooks/prepare-commit-msg.js"
   },
   "keywords": [],
   "author": "nima-enterprises",
