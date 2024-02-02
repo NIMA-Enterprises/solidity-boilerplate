@@ -27,8 +27,7 @@ jobs:
         run: |
           git config user.name "Github Bot 🤖"
           git config user.email "<>"
-      - name: Use https:// instead of git://
-        run: git config --global url.https://github.com/.insteadOf git://github.com/
+          git config --global url.https://github.com/.insteadOf git://github.com/
       - name: Install dependencies
         run: yarn install
       - name: Lint
