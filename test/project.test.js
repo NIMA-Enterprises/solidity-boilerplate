@@ -11,12 +11,12 @@ describe('Project Tests', function () {
     const tokenFactory = await ethers.getContractFactory('Token');
     token = await tokenFactory.deploy();
 
-    await token.deploymentTransaction().wait();
+    await token.deployed();
   });
 
   it('Should', async function () {
     const [user] = users;
-    const amount = ethers.parseEther('10');
+    const amount = ethers.utils.parseEther('10');
     await token.transfer(user.address, amount);
 
     expect(await token.balanceOf(user.address)).to.equal(amount);
