@@ -17,7 +17,7 @@ module.exports = {
       accounts,
     },
     testnet: {
-      url: 'https://evm-devnet.seinetwork.io',
+      url: 'https://evm-rpc.arctic-1.seinetwork.io',
       chainId: 713715,
       timeout,
       accounts,
