@@ -1,4 +1,5 @@
 module.exports = {
+  plugins: ['prettier-plugin-solidity'],
   overrides: [
     {
       files: '*.sol',

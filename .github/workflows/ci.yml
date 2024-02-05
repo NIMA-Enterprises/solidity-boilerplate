@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - 16.x
+          - 20.11
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -40,6 +40,8 @@ jobs:
           git add deployments/abis.json
       - name: Commit changes
         run: |
+          # Restore yarn.lock
+          git restore yarn.lock
           # commit and push
           if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
             git commit -m "🪄 ci"
