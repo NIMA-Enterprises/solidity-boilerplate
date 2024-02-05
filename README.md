@@ -15,6 +15,7 @@ This repository has already prepared benefits for your development:
 - Solcover, solhint and prettier configurations.
 - Scripts for retrieval of transaction data and wallet information.
 - Scripts for easy token distribution.
+- Precommit hooks used to standardize commit messages.
 
 ## Setup
 
@@ -22,7 +23,7 @@ This repository has already prepared benefits for your development:
 `$ git config url."https://".insteadOf git://`
 
 ### Dependencies
-- Make sure to use node version 16 or higher.
+- Make sure to use node version 20.11 or higher.
 - to install do `$ yarn`
 
 ### Environment
@@ -42,7 +43,7 @@ This repository has already prepared benefits for your development:
 `$ yarn lint`
 
 ### Format code
-`$ yarn prettier`
+`$ yarn format`
 
 ### Compute bytecode size of each contract
 `$ yarn size`
@@ -60,7 +61,7 @@ This repository has already prepared benefits for your development:
 
 ## Deployment
 ### Deploy token to testnet
-`$ npx hardhat run --network testnet scripts/token.deploy.js`
+`$ npx hardhat run --network testnet scripts/deployToken.js`
 
 ## CI
 ### Update abis manually
