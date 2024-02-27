@@ -15,7 +15,7 @@ module.exports = {
         'chore',
         'remove',
         'fix',
-        'feature',
+        'feat',
         'refactor',
         'config',
         'packages',
