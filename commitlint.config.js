@@ -12,6 +12,7 @@ module.exports = {
       2,
       'always',
       [
+        'chore',
         'remove',
         'fix',
         'feature',
