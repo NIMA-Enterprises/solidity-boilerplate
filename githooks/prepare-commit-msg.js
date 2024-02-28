@@ -11,6 +11,7 @@ const CommitTypeEnum = {
   packages: ':package:',
   chore: ':memo:',
   merge: ':twisted_rightwards_arrows:',
+  ci: ":camera_flash:",
 };
 
 (async () => {
