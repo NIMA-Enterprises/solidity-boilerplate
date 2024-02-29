@@ -19,9 +19,6 @@ This repository has already prepared benefits for your development:
 
 ## Setup
 
-### Git config
-`$ git config url."https://".insteadOf git://`
-
 ### Dependencies
 - Make sure to use node version 20.11 or higher.
 - to install do `$ yarn`
