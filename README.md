@@ -19,9 +19,8 @@ This repository has already prepared benefits for your development:
 
 ## Setup
 
-### Dependencies
-- Make sure to use node version 20.11 or higher.
-- to install do `$ yarn`
+- `$ nvm use`
+- `$ yarn install`
 
 ### Environment
  - Fill in the environment values as described with .env.example template inside the .env file (comand below)
