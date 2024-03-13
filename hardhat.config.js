@@ -26,6 +26,20 @@ module.exports = {
       url: 'http://localhost:8545',
     },
   },
+  contractSizer: {
+    alphaSort: true,
+    runOnCompile: true,
+    disambiguatePaths: true,
+  },
+  gasReporter: {
+    enabled: true,
+  },
+  paths: {
+    sources: './contracts',
+    tests: './test',
+    cache: './cache',
+    artifacts: './artifacts',
+  },
   solidity: {
     compilers: [
       {
